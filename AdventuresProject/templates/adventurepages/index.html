@@ -4,6 +4,25 @@
 
 <!-- Content block for main pagev -->
 {% block content %}
+        {% comment %} <!-- Hero image -->
+        <div class="hero">
+        <img src="{% static 'img/hikinghero.jpg' %}" alt="Hero Image"/>
+            <section id="thehero">
+            <div class="the-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>Adventures Unlimited</h1>
+            </div>
+            </div>
+                <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>Start your adventure today</p>
+            </div>
+            </div>
+            </div>
+            </section>
+        </div> {% endcomment %}
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
@@ -15,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> 
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
             <div class="container px-4 px-lg-5">
