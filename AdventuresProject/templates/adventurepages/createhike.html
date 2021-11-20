@@ -8,6 +8,8 @@
 <form name="createhike" method="post" action="{% url 'storehike' %}">
     {% csrf_token %}
     <br><br>
+    <br><br>
+    <br><br>
     <label for='hike_name'>Enter the hike name:</label>
     <input type="text" name='hike_name' id='hike_name'> 
     <br><br>     
@@ -31,6 +33,12 @@
         <option value='True'>Yes</option>
         <option value='False'>No</option>
     </select>       
+    <br><br>     
+    {% comment %} <label for='firepit'>Is there a firepit?:</label> {% endcomment %}
+    {% comment %} <select name='firepit' id='firepit'> 
+        <option value='True'>Yes</option>
+        <option value='False'>No</option> 
+    </select>   {% endcomment %}
     <br><br>      
     <label for='address'>Enter the address:</label>
     <input type="text" name='address' id='address'> 
