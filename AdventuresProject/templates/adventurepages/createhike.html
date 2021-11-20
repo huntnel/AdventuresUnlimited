@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+
 <br><br><br><br><br><br><br><br><br>
+
 <form name="createhike" method="post" action="{% url 'storehike' %}">
     {% csrf_token %}
     <br><br>
