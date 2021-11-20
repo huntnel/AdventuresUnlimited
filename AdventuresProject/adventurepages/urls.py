@@ -3,7 +3,7 @@ from .views import indexPageView, campingPageView, hikingPageView, climbingPageV
 
 urlpatterns = [
     path("", indexPageView, name = "index"),
-    path("camping/<trip_name>/<int:trip_length>/", campingPageView, name = "camping"),
+    path("camping/", campingPageView, name = "camping"),
     path("hiking/", hikingPageView, name = "hiking"),
     path("climbing/", climbingPageView, name = "climbing"),
 ]
