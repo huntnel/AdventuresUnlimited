@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form name="createcamp" method="post" action="{% url 'storecamp' %}">
+    {% csrf_token %}
+    <br><br>
+    <label for='camp_name'>Enter the camp site name:</label>
+    <input type="text" name='hike_name' id='hike_name'> 
+    <br><br>         
+    <label for='c_description'>Enter the description:</label>
+    <input type="text" name='c_description' id='c_description'> 
+    <br><br>   
+    <label for='price'>Enter the price of the camp site:</label>
+    <input type="number" name='price' id='price' step="0.01"> 
+    <br><br>   
+    <label for='c_bathroom'>Is there a bathroom?:</label>
+    <select name='c_bathroom' id='c_bathroom'> 
+        <option value='True'>Yes</option>
+        <option value='False'>No</option>
+    </select>     
+    <br><br>  
+        <label for='c_water'>Is there drinkable water?:</label>
+    <select name='c_water' id='c_water'> 
+        <option value='True'>Yes</option>
+        <option value='False'>No</option>
+    </select>       
+    <br><br>     
+    <label for='c_firepit'>Is there a firepit?:</label>
+    <select name='c_firepit' id='c_firepit'> 
+        <option value='True'>Yes</option>
+        <option value='False'>No</option> 
+    </select>  
+    <br><br>      
+    <label for='c_address'>Enter the address:</label>
+    <input type="text" name='c_address' id='c_address'> 
+    <br><br>   
+    <label for='c_city'>Enter the city:</label>
+    <input type="text" name='c_city' id='c_city'> 
+    <br><br>   
+    <label for='c_state'>Enter the state:</label>
+    <input type="text" name='c_state' id='c_state'> 
+    <br><br>   
+    <label for='c_zip'>Enter the zip:</label>
+    <input type="number" name='c_zip' id='c_zip'> 
+    <br><br>     
+    <button type="submit">Create Camp Site</button>
+</form>
+{% endblock %}
