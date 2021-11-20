@@ -41,11 +41,18 @@ def storeHikePageView(request) :
         #Store the data from the form to the new object's attributes (like columns)
         new_hike.hikename = request.POST.get('hike_name')
         new_hike.elevationgain = int(request.POST.get('elevation_gain'))
+<<<<<<< HEAD
         new_hike.length = int(request.POST.get('length'))
         new_hike.description = request.POST.get('description')
         new_hike.bathroom = bool(request.POST.get('bathroom'))
         new_hike.potablewater = bool(request.POST.get('water'))
         # new_hike.firepits = request.POST.get('fire')
+=======
+        new_hike.length = float(request.POST.get('length'))
+        new_hike.description = request.POST.get('description')
+        new_hike.bathroom = bool(request.POST.get('bathroom'))
+        new_hike.potablewater = bool(request.POST.get('water'))
+>>>>>>> 4bef4583e0e8780e717a0f11b5fd22c24aeb846a
         new_hike.address = request.POST.get('address')
         new_hike.city = request.POST.get('city')
         new_hike.state = request.POST.get('state')
