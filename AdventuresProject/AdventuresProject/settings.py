@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'AdventuresProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'adventuresunlimited',
+        'NAME': 'adventuresunlimited2.1',
         'USER': 'postgres',
-        'PASSWORD' : 'Missy123',
+        'PASSWORD' : 'admin',
         'HOST' : 'localhost',
         'PORT' : 5432,
     }
