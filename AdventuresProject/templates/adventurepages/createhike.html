@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 
+
+<br><br><br><br><br><br><br><br><br>
+
 <form name="createhike" method="post" action="{% url 'storehike' %}">
     {% csrf_token %}
     <br><br>
@@ -28,12 +31,6 @@
         <option value='True'>Yes</option>
         <option value='False'>No</option>
     </select>       
-    <br><br>     
-    <label for='firepit'>Is there a firepit?:</label>
-    <select name='firepit' id='firepit'> 
-        <option value='True'>Yes</option>
-        <option value='False'>No</option> 
-    </select>  
     <br><br>      
     <label for='address'>Enter the address:</label>
     <input type="text" name='address' id='address'> 
