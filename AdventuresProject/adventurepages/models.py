@@ -9,7 +9,6 @@ class Hiking(models.Model):
     description = models.CharField(max_length=250)
     bathroom = models.BooleanField
     potablewater = models.BooleanField
-    firepits = models.BooleanField
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=25)
     state = models.CharField(max_length=2)

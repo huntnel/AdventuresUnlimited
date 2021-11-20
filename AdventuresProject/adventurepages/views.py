@@ -40,16 +40,15 @@ def storeHikePageView(request) :
         
         #Store the data from the form to the new object's attributes (like columns)
         new_hike.hikename = request.POST.get('hike_name')
-        new_hike.elevationgain = request.POST.get('elevation_gain')
-        new_hike.length = request.POST.get('length')
+        new_hike.elevationgain = int(request.POST.get('elevation_gain'))
+        new_hike.length = float(request.POST.get('length'))
         new_hike.description = request.POST.get('description')
-        new_hike.bathroom = request.POST.get('bathroom')
-        new_hike.potablewater = request.POST.get('water')
-        new_hike.firepits = request.POST.get('fire')
+        new_hike.bathroom = bool(request.POST.get('bathroom'))
+        new_hike.potablewater = bool(request.POST.get('water'))
         new_hike.address = request.POST.get('address')
         new_hike.city = request.POST.get('city')
         new_hike.state = request.POST.get('state')
-        new_hike.zipcode = request.POST.get('zip')
+        new_hike.zipcode = int(request.POST.get('zip'))
         new_hike.difficulty = request.POST.get('difficulty')
                 
         #Save the employee record
