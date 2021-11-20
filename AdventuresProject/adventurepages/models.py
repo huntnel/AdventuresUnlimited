@@ -7,14 +7,9 @@ class Hiking(models.Model):
     elevationgain = models.IntegerField(default=0)
     length = models.FloatField(default=0.0)
     description = models.CharField(max_length=250)
-<<<<<<< HEAD
     bathroom = models.BooleanField(default=True)
     potablewater = models.BooleanField(default=True)
     # firepits = models.BooleanField
-=======
-    bathroom = models.BooleanField
-    potablewater = models.BooleanField
->>>>>>> 4bef4583e0e8780e717a0f11b5fd22c24aeb846a
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=25)
     state = models.CharField(max_length=2)
