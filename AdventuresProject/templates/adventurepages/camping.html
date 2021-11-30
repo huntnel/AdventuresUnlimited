@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-This is the camping page.   
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
     <table style="margin-left:auto;margin-right:auto;width: 50%;">
         <tr>
-            <td>Camp Name</td>
-            <td>Description</td>
+            <td style="font-weight:bold;">Camp Name</td>
+            <td style="font-weight:bold;">Description</td>
         </tr>
         {% for cam in camps %}
         <tr>
