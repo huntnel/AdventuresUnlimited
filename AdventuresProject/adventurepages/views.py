@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Hiking, Camping
+from .models import Hike, Camp
 
 # Create your views here.
 
@@ -8,7 +8,11 @@ def indexPageView(request) :
     return render(request, 'adventurepages/index.html')
 
 def campingPageView(request) :
-    return render(request, 'adventurepages/camping.html')   
+    data = Camp.objects.all()
+    context = {
+        'camps' : data
+    }
+    return render(request, 'adventurepages/camping.html', context)   
 
 def hikingPageView(request) :
     return render(request, 'adventurepages/hiking.html')
@@ -36,7 +40,7 @@ def storeHikePageView(request) :
     if request.method == 'POST':
 
         #Create a new employee object from the model (like a new record)
-        new_hike = Hiking()
+        new_hike = Hike()
         
         #Store the data from the form to the new object's attributes (like columns)
         new_hike.hikename = request.POST.get('hike_name')

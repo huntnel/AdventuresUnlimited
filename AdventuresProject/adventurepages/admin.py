@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Hiking, Camping
+from .models import Hike, Camp
 # Register your models here.
 
-admin.site.register(Hiking)
-admin.site.register(Camping)
+admin.site.register(Hike)
+admin.site.register(Camp)

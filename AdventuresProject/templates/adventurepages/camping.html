@@ -2,10 +2,19 @@
 {% load static %}
 {% block content %}
 This is the camping page.   
+<br><br><br><br><br><br><br><br><br><br><br><br>
+    <table style="margin-left:auto;margin-right:auto;width: 50%;">
+        <tr>
+            <td>Camp Name</td>
+            <td>Description</td>
+        </tr>
+        {% for cam in camps %}
+        <tr>
+            <td>{{cam.campname}}</td>
+            <td>{{cam.description}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br><br><br>
 
-
-<table>
-<tr>
-    <td></td><td></td><td></td>
-</tr>
 {% endblock %}

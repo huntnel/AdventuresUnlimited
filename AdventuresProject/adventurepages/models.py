@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.fields import IntegerField
 
 # Create your models here.
-class Hiking(models.Model):
+class Hike(models.Model):
     hikename = models.CharField(max_length=50)
     elevationgain = models.IntegerField(default=0)
     length = models.FloatField(default=0.0)
@@ -21,7 +21,7 @@ class Hiking(models.Model):
     def __str__(self) :
         return (self.hikename)
 
-class Camping(models.Model):
+class Camp(models.Model):
     campname = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     price = models.FloatField
