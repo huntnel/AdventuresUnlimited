@@ -1,47 +1,47 @@
-{% extends 'base.html' %}
+
 {% load static %}
 {% block content %}
 <form name="createcamp" method="post" action="{% url 'storecamp' %}">
     {% csrf_token %}
     <br><br>
-    <label for='camp_name'>Enter the camp site name:</label>
-    <input type="text" name='hike_name' id='hike_name'> 
+    <label for='sName'>Enter the camp site name:</label>
+    <input type="text" name='sName' id='sName' required> 
     <br><br>         
-    <label for='c_description'>Enter the description:</label>
-    <input type="text" name='c_description' id='c_description'> 
+    <label for='sDescription'>Enter the description:</label>
+    <input type="text" name='sDescription' id='sDescription' required> 
     <br><br>   
-    <label for='price'>Enter the price of the camp site:</label>
-    <input type="number" name='price' id='price' step="0.01"> 
+    <label for='iPrice'>Enter the price of the camp site:</label>
+    <input type="number" name='iPrice' id='iPrice' min=0 required> 
     <br><br>   
-    <label for='c_bathroom'>Is there a bathroom?:</label>
-    <select name='c_bathroom' id='c_bathroom'> 
+    <label for='bBathroom'>Is there a bathroom?:</label>
+    <select name='bBathroom' id='bBathroom' required> 
         <option value='True'>Yes</option>
         <option value='False'>No</option>
     </select>     
     <br><br>  
-        <label for='c_water'>Is there drinkable water?:</label>
-    <select name='c_water' id='c_water'> 
+        <label for='bWater'>Is there drinkable water?:</label>
+    <select name='bWater' id='bWater' required> 
         <option value='True'>Yes</option>
         <option value='False'>No</option>
     </select>       
     <br><br>     
-    <label for='c_firepit'>Is there a firepit?:</label>
-    <select name='c_firepit' id='c_firepit'> 
+    <label for='bFire'>Is there a firepit?:</label>
+    <select name='bFire' id='bFire' required> 
         <option value='True'>Yes</option>
         <option value='False'>No</option> 
     </select>  
     <br><br>      
-    <label for='c_address'>Enter the address:</label>
-    <input type="text" name='c_address' id='c_address'> 
+    <label for='sAddress'>Enter the address:</label>
+    <input type="text" name='sAddress' id='sAddress' required> 
     <br><br>   
-    <label for='c_city'>Enter the city:</label>
-    <input type="text" name='c_city' id='c_city'> 
+    <label for='sCity'>Enter the city:</label>
+    <input type="text" name='sCity' id='sCity' required> 
     <br><br>   
-    <label for='c_state'>Enter the state:</label>
-    <input type="text" name='c_state' id='c_state'> 
+    <label for='sState'>Enter the state:</label>
+    <input type="text" name='sState' id='sState' required> 
     <br><br>   
-    <label for='c_zip'>Enter the zip:</label>
-    <input type="number" name='c_zip' id='c_zip'> 
+    <label for='iZip'>Enter the zip:</label>
+    <input type="number" name='iZip' min=11111 max=99999 id='iZip ' required> 
     <br><br>     
     <button type="submit">Create Camp Site</button>
 </form>

@@ -24,7 +24,34 @@ def createHikePageView(request) :
     return render(request, 'adventurepages/createhike.html')
 
 def createCampPageView(request) :
-    return render(request, 'adventurepages/camping.html')
+    return render(request, 'adventurepages/createcamp.html')
+
+def storeCampPageView(request) :
+            #Check to see if the form method is a get or post
+    if request.method == 'POST':
+
+        #Create a new employee object from the model (like a new record)
+        oNewCamp = Camp()
+        
+        #Store the data from the form to the new object's attributes (like columns)
+        oNewCamp.campname = request.POST.get('sName')
+        oNewCamp.description = request.POST.get('sDescription')
+        oNewCamp.price = request.POST.get('iPrice')
+        oNewCamp.bathroom = request.POST.get('bBathroom')
+        oNewCamp.potablewater = bool(request.POST.get('bWater'))
+        oNewCamp.firepits = bool(request.POST.get('bFire'))
+        # new_hike.firepits = request.POST.get('fire')
+        oNewCamp.address = request.POST.get('sAddress')
+        oNewCamp.city = request.POST.get('sCity')
+        oNewCamp.state = request.POST.get('sState')
+        oNewCamp.zipcode = int(request.POST.get('iZip'))                
+        #Save the employee record
+        oNewCamp.save()
+        data = Camp.objects.all()
+        context = {
+            "camps" : data
+        }
+    return render(request, 'adventurepages/camping.html', context)
 
 def updateHikePageView(request) :
     if request.method == "POST" :
@@ -58,7 +85,7 @@ def deleteCampPageView(request, id) :
         context = {
             "camps" : data
         }
-    return render(request, 'adventurepages/deletecamp.html', context)
+    return render(request, 'adventurepages/camping.html', context)
 
 def deleteHikePageView(request) :
     return render(request, 'adventurepages/deletehike.html')
@@ -87,9 +114,6 @@ def storeHikePageView(request) :
         #Save the employee record
         new_hike.save()
     return render(request, 'adventurepages/hiking.html')
-
-def storeCampPageView(request) :
-    return render(request, 'travelpages/storecamp.html')
 
 def editCampPageView(request, campid) :
     oCamp = Camp.objects.filter(id= campid)
