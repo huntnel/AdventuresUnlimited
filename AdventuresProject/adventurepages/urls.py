@@ -1,11 +1,18 @@
 from django.urls import path
+<<<<<<< HEAD
 from .views import indexPageView, storeHikePageView, updateCampPageView, updateHikePageView, campingPageView
 from .views import hikingPageView, createHikePageView, createCampPageView, updateHikePageView, updateCampPageView
 from .views import deleteCampPageView, deleteHikePageView, editCampPageView, aboutPageView, storeCampPageView
 
+=======
+from .views import indexPageView, updateCampPageView, campingPageView
+from .views import createCampPageView, updateCampPageView
+from .views import deleteCampPageView, editCampPageView, aboutPageView, storeCampPageView
+>>>>>>> edababba34b937cfc21e5ee96b61d512163e6a50
 
 
 urlpatterns = [
+    
     path("", indexPageView, name = "index"),
     path("about/", aboutPageView, name="about"),
     path("camping/", campingPageView, name = "camping"),
