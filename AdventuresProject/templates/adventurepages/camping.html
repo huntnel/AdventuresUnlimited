@@ -9,8 +9,10 @@
         </tr>
         {% for cam in camps %}
         <tr>
+            <td><form method="GET" action={% url 'editcamp' campid=cam.id %}><button type='submit'>Edit</button><form></td>
             <td>{{cam.campname}}</td>
             <td>{{cam.description}}</td>
+            <td><form method="POST" action={% url 'deletecamp' id=cam.id %}>{% csrf_token %}<button type='submit'>Delete</button><form></td>
         </tr>
         {% endfor %}
     </table>
