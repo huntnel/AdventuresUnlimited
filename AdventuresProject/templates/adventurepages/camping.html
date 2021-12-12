@@ -1,11 +1,81 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+<!-- stylesheet -->
+<link rel="stylesheet" href="{% static 'otherPages/displayStyles.css' %}">
+{% endblock %}
+{% block content %}
+<div class="background-stuff" style="min-height:80vh;">
+  <h1>Camps</h1>
+    <div class="table-container">
+        <div class="rTable">
+            <div class="rTableRow">
+                <div class="rTableHead">Edit</div>
+                <div class="rTableHead">Camp Name</div>
+                <div class="rTableHead">Description</div>
+                <div class="rTableHead">Delete</div>
+            </div>
+            <!--Loop through results-->
+            {% for cam in camps %}
+            <div class="rTableRow">
+                <!--Row for edit button-->  
+                    <div class="rTableCell">
+                    <form action='{% url 'editcamp' campid=cam.id %}' method='GET'>{% csrf_token %}
+                        <button class="button" type='submit'>Edit</button>
+                    </form>
+                    </div>
+                
+                <!--campname Field-->
+                    <div class="rTableCell">
+                        {{cam.campname}}
+                    </div>
+                    <!--description Field-->
+                    <div class="rTableCell">
+                        {{cam.description}}
+                    </div>
+                    <!--Row for delete button-->
+                    <div class="rTableCell">
+                    <form action="{% url 'deletecamp' id=cam.id %}" method='POST'>{% csrf_token %}
+                        <button class= "button" type='submit'>Delete</button>
+                    </form>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+  {% comment %} Button Container {% endcomment %}
+        <div class="button-container" style="padding-bottom: 20px;">
+        <form action="{% url 'createcamp' %}" method="GET">{% csrf_token %}<button type="submit" class="styled">Add Camp</button></form>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <br><br><br><br><br><br><br><br><br>
     <table style="margin-left:auto;margin-right:auto;width: 50%;">
         <tr>
+            <td></td>
             <td style="font-weight:bold;">Camp Name</td>
             <td style="font-weight:bold;">Description</td>
+            <td></td>
         </tr>
         {% for cam in camps %}
         <tr>
@@ -21,4 +91,4 @@
     </form>
     <br><br><br><br>
 
-{% endblock %}
+{% endblock %} {% endcomment %}

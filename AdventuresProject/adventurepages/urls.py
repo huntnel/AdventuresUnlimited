@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import indexPageView, updateCampPageView, campingPageView
-from .views import createCampPageView, updateCampPageView
-from .views import deleteCampPageView, editCampPageView, aboutPageView, storeCampPageView
+from .views import indexPageView, storeHikePageView, updateCampPageView, updateHikePageView, campingPageView
+from .views import hikingPageView, createHikePageView, createCampPageView, updateHikePageView, updateCampPageView
+from .views import deleteCampPageView, deleteHikePageView, editCampPageView, aboutPageView, storeCampPageView
 
 
 urlpatterns = [
