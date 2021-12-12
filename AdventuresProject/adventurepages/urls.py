@@ -1,12 +1,8 @@
 from django.urls import path
-from .views import indexPageView, storeHikePageView, updateCampPageView, updateHikePageView, campingPageView
-from .views import hikingPageView, createHikePageView, createCampPageView, updateHikePageView, updateCampPageView
-<<<<<<< HEAD
-from .views import deleteCampPageView, deleteHikePageView, editCampPageView, aboutPageView, storeCampPageView
+from .views import indexPageView, updateCampPageView, campingPageView
+from .views import createCampPageView, updateCampPageView
+from .views import deleteCampPageView, editCampPageView, aboutPageView, storeCampPageView
 
-=======
-from .views import deleteCampPageView, deleteHikePageView, aboutPageView, editCampPageView
->>>>>>> 008fb1e821c8efa9fd1532058cda7606037cafb0
 
 urlpatterns = [
     path("", indexPageView, name = "index"),
