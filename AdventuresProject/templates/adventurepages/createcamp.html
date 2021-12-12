@@ -1,6 +1,128 @@
-
+{% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+<!-- stylesheet -->
+<link rel="stylesheet" href="{% static 'css/bootstrapstyle.css' %}">
+{% endblock %}
+
 {% block content %}
+
+<!-- Section -->
+<div class="background-stuff" style="min-height:90vh;">
+    <section class="section style-three pb-0">
+      <div class="container">
+        <div class="row">
+          {% comment %} <div class="col-lg-6 order-1 order-lg-0"> {% endcomment %}
+            <div class="contact-area style-two pl-0 pr-0 pr-lg-4">
+              <div class="section-title">
+                <h3>Create Camp</h3>
+              </div>
+              <form name="createcamp" class="default-form contact-form" method='POST' action="{% url 'storecamp' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <!--Start First Column-->
+                  <div class="col-md-6">
+
+                    <!--campName-->
+                    <div class="form-group" for="sName">
+                      <input class="form-control" type="text"  name="sName" id="sName" placeholder="Camp Site Name:" required>
+                    </div>
+
+                    <!--description-->
+                    <div class="form-group" for="sDescription">
+                        <input class="form-control" type="text"  name="sDescription" id="sDescription" placeholder="Camp Description:" required>
+                    </div>
+
+                    <!--iPrice -->
+                    <div class="form-group">
+                        <input class="form-control" type="number"  min=0 name="iPrice" id="iPrice" placeholder="Price:" required>
+                    </div>
+                    <!-- end-->
+     
+                    <!--bBathroom-->
+                  <div class="form-group" for="bBathroom">
+                    <select class="form-control" name="bBathroom" id="bBathroom" default="" required>
+                        <option value="">Bathroom onsite?</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                      </select>
+                  </div>
+    
+                  <!--bWater-->
+                  <div class="form-group" for="bWater">
+                    <select class="form-control" name="bWater" id="bWater" default="" required>
+                        <option value="">Drinkable Water?</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                      </select>
+                  </div>
+                  <!--End-->
+    
+                  </div>
+    
+              
+                  <!--Start Column 2-->
+                  <div class="col-md-6">
+                    <!--bFire -->
+                    <div class="form-group" for="bFire">       
+                        <select class="form-control" name="bFire" id="bFire" default="" required>
+                            <option value="">Firepit onsite?</option>
+                            <option value="True">Yes</option>
+                            <option value="False">No</option>
+                          </select>
+                    </div>
+
+                    <!--sAddress-->
+                    <div class="form-group">
+                        <input class="form-control" type="text"  name="sAddress" id="sAddress" placeholder="Address:" required>
+                    </div>
+
+                    <!--sCity-->
+                    <div class="form-group" for="sCity">
+                      <input class="form-control" type="text"  name="sCity" id="sCity" placeholder="City:">
+                    </div>
+    
+                    <!--sState-->
+                    <div class="form-group" for="sState">
+                        <input class="form-control" type="text"  name="sState" id="sState" placeholder="State:">
+                    </div>
+    
+                    <!--iZip-->
+                    <div class="form-group" for="iZip">
+                        <input class="form-control" type="number" min=11111 max=99999 name="iZip" id="iZip" placeholder="Zipcode:" required>
+                    </div>
+
+                  </div>
+                  <div class="col-md-12">
+
+                    <div class="form-group text-center">
+                      <button type="submit" class="btn-style-one">Create</button>
+                    </div>
+                  </div>
+                </form>
+    
+                </div>
+    
+            </div>
+          {% comment %} </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+{% comment %} 
+
+    
 <form name="createcamp" method="post" action="{% url 'storecamp' %}">
     {% csrf_token %}
     <br><br>
@@ -44,5 +166,4 @@
     <input type="number" name='iZip' min=11111 max=99999 id='iZip ' required> 
     <br><br>     
     <button type="submit">Create Camp Site</button>
-</form>
-{% endblock %}
+</form> {% endcomment %}

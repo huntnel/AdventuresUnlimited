@@ -1,4 +1,131 @@
-{% for cam in camp %}
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<!-- stylesheet -->
+<link rel="stylesheet" href="{% static 'css/bootstrapstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Section -->
+<div class="background-stuff" style="min-height:90vh;">
+    <section class="section style-three pb-0">
+      <div class="container">
+        <div class="row">
+          {% comment %} <div class="col-lg-6 order-1 order-lg-0"> {% endcomment %}
+            <div class="contact-area style-two pl-0 pr-0 pr-lg-4">
+              <div class="section-title">
+                <h3>Update Camp</h3>
+              </div>
+              {% for cam in camp %}
+              <form name="contact_form" class="default-form contact-form" method="POST" action="{% url "updatecamp" id=cam.id %}">
+
+                {% csrf_token %}
+
+                <div class="row">
+                  <!--Start First Column-->
+                  <div class="col-md-6">
+                    <!-->What is the new camp name?-->
+                    <div class="form-group" for="sName">
+                      <input class="form-control" type="text"  name="sName" id="sName" placeholder="{{cam.campname}}">
+                    </div>
+                    
+                    <!--What is the new camp Description?-->
+                    <div class="form-group">
+                        <input class="form-control" type="text"  name="sDesc" id="sDesc" placeholder="{{cam.description}}">
+                    </div>
+
+                    <!--What is the new camp price? -->
+                    <div class="form-group">
+                        <input class="form-control" type="number"  min=0 name="iPrice" id="iPrice" placeholder="{{cam.price}}">
+                    </div>
+                    <!-- end -->
+    
+                    <!--Does the camp have a bathroom?-->
+                  <div class="form-group" for="updatenumber">
+                    <select class="form-control" name="bBathroom" id="bBathroom" default="">
+                        <option value="">Does the camp have a bathroom?</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                    </select>
+                  </div>
+    
+                  <!--Does the camp have portable water?-->
+                  <div class="form-group" for="qty">
+                    <select class="form-control" name="bWater" id="bWater" default="">
+                        <option value="">Does the camp have portable water?</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                    </select>
+                  </div>
+                  <!--End-->
+    
+                  </div>
+    
+              
+                  <!--Start Column 2-->
+                  <div class="col-md-6">
+                    <!--Does the camp have a firepit? -->
+                    <div class="form-group" for="lastName">       
+                        <select class="form-control" name="bFire" id="bFire" default="">
+                            <option value="">Does the camp have a firepit?</option>
+                            <option value="True">Yes</option>
+                            <option value="False">No</option>
+                        </select>
+                    </div>
+
+                    <!--What is the new camp address?-->
+                    <div class="form-group">
+                        <input class="form-control" type="text"  name="sAddress" id="sAddress" placeholder="{{cam.address}}">
+                    </div>
+    
+                    <!--What is the new camp city?-->
+                    <div class="form-group" for="sCity">
+                      <input class="form-control" type="text"  name="sCity" id="sCity" placeholder="{{cam.city}}">
+                    </div>
+    
+                    <!--What is the new camp state?-->
+                    <div class="form-group" for="sState">
+                        <input class="form-control" type="text"  name="sState" id="sState" placeholder="{{cam.state}}">
+                    </div>
+    
+                    
+    
+                    <!--What is the new camp zip code?-->
+                    <div class="form-group" for="iZip">
+                      <input class="form-control" type="number"  default="11111" name="iZip" min=11111 max=99999 id="iZip" placeholder="Zipcode">
+                    </div>
+    
+                    {% endfor %}
+    
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group text-center">
+                      <button type="submit" class="btn-style-one">Update</button>
+                    </div>
+                  </div>
+                </form>
+    
+                </div>
+    
+            </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+    {% comment %} {% for cam in camp %}
 <form method="POST" action="{% url "updatecamp" id=cam.id %}">
 {% csrf_token %}
 <label for="sName">What is the new camp name?</label>
@@ -32,4 +159,4 @@
 <input type="number" default="11111" min=11111 max=99999 name="iZip"><br>
 <button type='submit'>Update</button>
 </form>
-{% endfor %}
+{% endfor %} {% endcomment %}
