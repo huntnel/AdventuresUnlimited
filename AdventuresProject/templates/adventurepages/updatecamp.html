@@ -1,0 +1,35 @@
+{% for cam in camp %}
+<form method="POST" action="{% url "updatecamp" id=cam.id %}">
+{% csrf_token %}
+<label for="sName">What is the new camp name?</label>
+<input value='{{cam.campname}}' type="text" name="sName"><br>
+<label for="sDesc">What is the new camp Description?</label>
+<input type="text" name="sDesc" value='{{cam.description}}'><br>
+<label for="iPrice">What is the new camp price?</label>
+<input type="number" min=0 name="iPrice" default='{{cam.price}}'><br>
+<label for="bBathroom">Does the camp have a bathroom?</label>
+<select name='bBathroom'>
+    <option value="True">Yes</option>
+    <option value="False">No</option>
+</select><br>
+<label for="bWater">Does the camp have portable water?</label>
+<select name='bWater'>
+    <option value="True">Yes</option>
+    <option value="False">No</option>
+</select><br>
+<label for="bFire">Does the camp have a firepit?</label>
+<select name='bFire'>
+    <option value="True">Yes</option>
+    <option value="False">No</option>
+</select><br>
+<label for="sAddress">What is the new camp address?</label>
+<input type="text" value='{{cam.address}}' name="sAddress"><br>
+<label for="sCity">What is the new camp city?</label>
+<input type="text" value='{{cam.city}}' name="sCity"><br>
+<label for="sState">What is the new camp state?</label>
+<input type="text" value="{{cam.state}}" name="sState"><br>
+<label for="iZip">What is the new camp zip code?</label>
+<input type="number" default="11111" min=11111 max=99999 name="iZip"><br>
+<button type='submit'>Update</button>
+</form>
+{% endfor %}

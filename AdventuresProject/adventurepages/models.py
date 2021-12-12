@@ -8,7 +8,7 @@ class Hike(models.Model):
     length = models.FloatField(default=0.0)
     description = models.CharField(max_length=250)
     bathroom = models.BooleanField(default=True)
-    potablewater = models.BooleanField(default=True)
+    portablewater = models.BooleanField(default=True)
     # firepits = models.BooleanField
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=25)
@@ -30,7 +30,7 @@ class Camp(models.Model):
     firepits = models.BooleanField
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=25)
-    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=25)
     zipcode = IntegerField
 
     class Meta :

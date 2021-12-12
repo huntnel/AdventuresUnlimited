@@ -24,16 +24,41 @@ def createCampPageView(request) :
     return render(request, 'adventurepages/camping.html')
 
 def updateHikePageView(request) :
-    return render(request, 'adventurepages/updatehike.html')
+    if request.method == "POST" :
+        return render(request, 'adventurepages/updatehike.html')
 
-def updateCampPageView(request) :
-    return render(request, 'adventurepages/updatecamp.html')
+def updateCampPageView(request, id) :
+    if request.method == "POST" :
+        oCamp = Camp.objects.get(id=id)
+        oCamp.campname = request.POST.get('sName')
+        oCamp.description = request.POST.get('sDesc')
+        oCamp.price = request.POST.get('iPrice')
+        oCamp.bathroom = request.POST.get('bBathroom')
+        oCamp.potablewater = request.POST.get('bWater')
+        oCamp.firepits = request.POST.get('bFire')
+        oCamp.address = request.POST.get('sAddress')
+        oCamp.city = request.POST.get('sCity')
+        oCamp.state = request.POST.get('sState')
+        oCamp.zipcode = request.POST.get('iZip')
+        oCamp.save()
+        data=Camp.objects.all()
+        context = {
+            "camps" : data
+        }
+        return render(request, 'adventurepages/camping.html', context)
+
+def deleteCampPageView(request, id) :
+    if request.method == "POST" :
+        oCamp = Camp.objects.get(id=id)
+        oCamp.delete()
+        data = Camp.objects.all()
+        context = {
+            "camps" : data
+        }
+    return render(request, 'adventurepages/deletecamp.html', context)
 
 def deleteHikePageView(request) :
     return render(request, 'adventurepages/deletehike.html')
-
-def deleteCampPageView(request) :
-    return render(request, 'adventurepages/deletecamp.html')
 
 def storeHikePageView(request) :
         #Check to see if the form method is a get or post
@@ -62,4 +87,11 @@ def storeHikePageView(request) :
 
 def storeCampPageView(request) :
     return render(request, 'travelpages/storecamp.html')
+
+def editCampPageView(request, campid) :
+    oCamp = Camp.objects.filter(id= campid)
+    context = {
+        "camp" : oCamp
+    }
+    return render(request, "adventurepages/updatecamp.html", context)
    
