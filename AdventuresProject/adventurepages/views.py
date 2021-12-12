@@ -7,6 +7,9 @@ from .models import Hike, Camp
 def indexPageView(request) :
     return render(request, 'adventurepages/index.html')
 
+def aboutPageView(request) :
+    return render(request, 'adventurepages/about.html')
+
 def campingPageView(request) :
     data = Camp.objects.all()
     context = {
