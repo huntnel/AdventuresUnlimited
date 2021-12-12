@@ -1,10 +1,11 @@
 from django.urls import path
 from .views import indexPageView, storeHikePageView, updateCampPageView, updateHikePageView, storeCampPageView, campingPageView
 from .views import hikingPageView, createHikePageView, createCampPageView, updateHikePageView, updateCampPageView
-from .views import deleteCampPageView, deleteHikePageView
+from .views import deleteCampPageView, deleteHikePageView, aboutPageView
 
 urlpatterns = [
     path("", indexPageView, name = "index"),
+    path("about/", aboutPageView, name="about"),
     path("camping/", campingPageView, name = "camping"),
     path("hiking/", hikingPageView, name = "hiking"),
     path("createhike/", createHikePageView, name = "createhike"),
