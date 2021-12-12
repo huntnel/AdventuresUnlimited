@@ -85,7 +85,7 @@ def deleteCampPageView(request, id) :
         context = {
             "camps" : data
         }
-    return render(request, 'adventurepages/deletecamp.html', context)
+    return render(request, 'adventurepages/camping.html', context)
 
 def deleteHikePageView(request) :
     return render(request, 'adventurepages/deletehike.html')
