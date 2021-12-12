@@ -5,6 +5,7 @@ from .views import deleteCampPageView, editCampPageView, aboutPageView, storeCam
 
 
 urlpatterns = [
+    
     path("", indexPageView, name = "index"),
     path("about/", aboutPageView, name="about"),
     path("camping/", campingPageView, name = "camping"),
