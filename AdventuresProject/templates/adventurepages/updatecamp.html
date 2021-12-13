@@ -26,26 +26,30 @@
                 <div class="row">
                   <!--Start First Column-->
                   <div class="col-md-6">
-                    <!-->What is the new camp name?-->
+                    <!--What is the new camp name?-->
                     <div class="form-group" for="sName">
+                      <label>Camp Name </label>
                       <input class="form-control" type="text"  name="sName" id="sName" placeholder="{{cam.campname}}">
                     </div>
                     
                     <!--What is the new camp Description?-->
                     <div class="form-group">
-                        <input class="form-control" type="text"  name="sDesc" id="sDesc" placeholder="{{cam.description}}">
+                      <label>Camp Description </label>
+                      <input class="form-control" type="text"  name="sDesc" id="sDesc" placeholder="{{cam.description}}">
                     </div>
 
                     <!--What is the new camp price? -->
                     <div class="form-group">
-                        <input class="form-control" type="number"  min=0 name="iPrice" id="iPrice" placeholder="{{cam.price}}">
+                      <label>Camp Price </label>
+                      <input class="form-control" type="number"  min=0 name="iPrice" id="iPrice">
                     </div>
                     <!-- end -->
     
                     <!--Does the camp have a bathroom?-->
                   <div class="form-group" for="updatenumber">
+                    <label>Does the camp have a bathroom? </label>
                     <select class="form-control" name="bBathroom" id="bBathroom" default="">
-                        <option value="">Does the camp have a bathroom?</option>
+                        {% comment %} <option value="">Does the camp have a bathroom?</option> {% endcomment %}
                         <option value="True">Yes</option>
                         <option value="False">No</option>
                     </select>
@@ -53,8 +57,9 @@
     
                   <!--Does the camp have portable water?-->
                   <div class="form-group" for="qty">
+                    <label>Does the camp have portable water?</label>
                     <select class="form-control" name="bWater" id="bWater" default="">
-                        <option value="">Does the camp have portable water?</option>
+                        {% comment %} <option value="">Does the camp have portable water?</option> {% endcomment %}
                         <option value="True">Yes</option>
                         <option value="False">No</option>
                     </select>
@@ -67,34 +72,39 @@
                   <!--Start Column 2-->
                   <div class="col-md-6">
                     <!--Does the camp have a firepit? -->
-                    <div class="form-group" for="lastName">       
-                        <select class="form-control" name="bFire" id="bFire" default="">
-                            <option value="">Does the camp have a firepit?</option>
-                            <option value="True">Yes</option>
-                            <option value="False">No</option>
-                        </select>
+                    <div class="form-group" for="lastName">
+                      <label>Does the camp have a firepit?</label>
+                      <select class="form-control" name="bFire" id="bFire" default="">
+                          {% comment %} <option value="">Does the camp have a firepit?</option> {% endcomment %}
+                          <option value="True">Yes</option>
+                          <option value="False">No</option>
+                      </select>
                     </div>
 
                     <!--What is the new camp address?-->
                     <div class="form-group">
-                        <input class="form-control" type="text"  name="sAddress" id="sAddress" placeholder="{{cam.address}}">
+                      <label>Camp Address</label>
+                      <input class="form-control" type="text"  name="sAddress" id="sAddress" placeholder="{{cam.address}}">
                     </div>
     
                     <!--What is the new camp city?-->
                     <div class="form-group" for="sCity">
+                      <label>Camp City</label>
                       <input class="form-control" type="text"  name="sCity" id="sCity" placeholder="{{cam.city}}">
                     </div>
     
                     <!--What is the new camp state?-->
                     <div class="form-group" for="sState">
-                        <input class="form-control" type="text"  name="sState" id="sState" placeholder="{{cam.state}}">
+                      <label>Camp State</label>
+                      <input class="form-control" type="text"  name="sState" id="sState" placeholder="{{cam.state}}">
                     </div>
     
                     
     
                     <!--What is the new camp zip code?-->
                     <div class="form-group" for="iZip">
-                      <input class="form-control" type="number"  default="11111" name="iZip" min=11111 max=99999 id="iZip" placeholder="Zipcode">
+                      <label>Camp Zipcode</label>
+                      <input class="form-control" type="number"  default="11111" name="iZip" min=11111 max=99999 id="iZip">
                     </div>
     
                     {% endfor %}
