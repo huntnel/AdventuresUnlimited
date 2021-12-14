@@ -29,19 +29,19 @@
                     <!--What is the new camp name?-->
                     <div class="form-group" for="sName">
                       <label>Camp Name </label>
-                      <input class="form-control" type="text"  name="sName" id="sName" placeholder="{{cam.campname}}">
+                      <input class="form-control" type="text" value="{{cam.campname}}"  name="sName" id="sName" placeholder="{{cam.campname}}">
                     </div>
                     
                     <!--What is the new camp Description?-->
                     <div class="form-group">
                       <label>Camp Description </label>
-                      <input class="form-control" type="text"  name="sDesc" id="sDesc" placeholder="{{cam.description}}">
+                      <input class="form-control" type="text" value="{{cam.description}}"  name="sDesc" id="sDesc" placeholder="{{cam.description}}">
                     </div>
 
                     <!--What is the new camp price? -->
                     <div class="form-group">
                       <label>Camp Price </label>
-                      <input class="form-control" type="number"  min=0 name="iPrice" id="iPrice">
+                      <input class="form-control" type="number" value="{{cam.price}}" min=0 name="iPrice" id="iPrice">
                     </div>
                     <!-- end -->
     
@@ -84,19 +84,19 @@
                     <!--What is the new camp address?-->
                     <div class="form-group">
                       <label>Camp Address</label>
-                      <input class="form-control" type="text"  name="sAddress" id="sAddress" placeholder="{{cam.address}}">
+                      <input class="form-control" type="text" value="{{cam.address}}" name="sAddress" id="sAddress" placeholder="{{cam.address}}">
                     </div>
     
                     <!--What is the new camp city?-->
                     <div class="form-group" for="sCity">
                       <label>Camp City</label>
-                      <input class="form-control" type="text"  name="sCity" id="sCity" placeholder="{{cam.city}}">
+                      <input class="form-control" type="text" value="{{cam.city}}" name="sCity" id="sCity" placeholder="{{cam.city}}">
                     </div>
     
                     <!--What is the new camp state?-->
                     <div class="form-group" for="sState">
                       <label>Camp State</label>
-                      <input class="form-control" type="text"  name="sState" id="sState" placeholder="{{cam.state}}">
+                      <input class="form-control" type="text" value="{{cam.state}}" name="sState" id="sState" placeholder="{{cam.state}}">
                     </div>
     
                     
@@ -104,7 +104,7 @@
                     <!--What is the new camp zip code?-->
                     <div class="form-group" for="iZip">
                       <label>Camp Zipcode</label>
-                      <input class="form-control" type="number"  default="11111" name="iZip" min=11111 max=99999 id="iZip">
+                      <input class="form-control" type="number" value="{{cam.zipcode}}" default="11111" name="iZip" min=11111 max=99999 id="iZip">
                     </div>
     
                     {% endfor %}
